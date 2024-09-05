@@ -15,15 +15,25 @@ The VDrop.xlsx spreadsheet generates a voltage drop table for a typical motor ci
 
 Note, the purpose of this exercise is to utilize the new Excel 365 features and not necessary to implement all the features of a voltage drop table.
 
+![Voltage Drop Table](./VDropTable.png)
+
 ## Excel 365 dynamic array
 
-Cable data and motor data are stored as Excel tables. Based on the cable and load design parameters, data are retrieved from the cable and motor tables to populate the the voltage drop table using Excel dynamic array functions. The maximum length calculations also use the dynamic array feature of Excel.
+Cable data and motor data are stored as Excel tables. Based on the cable and load design parameters, data are retrieved from the cable and motor tables to populate the voltage drop table using Excel dynamic array functions. The maximum length calculations also use the dynamic array feature of Excel.
 
 The dynamic array feature in Excel allows a function formula entered in a **single cell** to populate data across multiple adjacent rows and/or columns. If a formula only return a single value, then such formula must be duplicated across all the cells of these rows and/or columns. It is easier to maintain a single formula than multiple formulas. Many existing and new functions in Excel 365 accept array input parameters and return an array output.
 
+Functions used in the spreadsheet:
+
+- FILTER
+- XLOOKUP
+- IFERROR
+- IF
+- TRANSPOSE
+
 ## Excel 365 LAMBDA function
 
-A custom function in Excel can be defined as a VBA macro or as a LAMBDA function. A LAMBDA function is defined as an Excel Name. LAMBDA function has inputs parameters and the calculations are performed using other Excel functions including other LAMBDA functions. LAMBDA function can accept array input and output array of values.
+A custom function in Excel can be defined as a VBA macro or as a LAMBDA function. A LAMBDA function is defined as an Excel Name. LAMBDA function has inputs parameters and the calculations are performed using other Excel functions including other LAMBDA functions. LAMBDA function can accept array input and output array of values. Using LAMBDA functions allow practical testing/debugging of the functions.
 
 The VDrop.xlsx spreadsheet defines several LAMBDA functions:
 
